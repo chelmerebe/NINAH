@@ -6,29 +6,30 @@
   <title>קפה נינה - הצד השני של הסיפור</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="כי לכל סיפור יש שני צדדים - דיון מאוזן על האירוع בבית הקפה בנווה צדק">
+  <meta name="description" content="כי לכל סיפור יש שני צדדים - דיון מאוזן על האירוע בבית הקפה בנווה צדק">
   <meta name="keywords" content="קפה נינה, נווה צדק, דיאלוג, דיון מאוזן">
   <meta name="author" content="הצד השני של הסיפור">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="REPLACE_WITH_YOUR_DOMAIN">
+  <meta property="og:url" content="https://ninah-chi.vercel.app/">
   <meta property="og:title" content="קפה נינה - הצד השני של הסיפור">
   <meta property="og:description" content="כי לכל סיפור יש שני צדדים - דיון מאוזן על האירוע בבית הקפה">
-  <meta property="og:image" content="REPLACE_WITH_YOUR_DOMAIN/og-image.jpg">
+  <meta property="og:image" content="https://ninah-chi.vercel.app/og-image.jpg">
   <meta property="og:locale" content="he_IL">
   <meta property="og:site_name" content="הצד השני של הסיפור">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="REPLACE_WITH_YOUR_DOMAIN">
+  <meta name="twitter:url" content="https://ninah-chi.vercel.app/">
   <meta name="twitter:title" content="קפה נינה - הצד השני של הסיפור">
   <meta name="twitter:description" content="כי לכל סיפור יש שני צדדים - דיון מאוזן על האירוע">
-  <meta name="twitter:image" content="REPLACE_WITH_YOUR_DOMAIN/og-image.jpg">
+  <meta name="twitter:image" content="https://ninah-chi.vercel.app/og-image.jpg">
 
   <!-- WhatsApp -->
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -330,10 +331,10 @@
 
       <div class="social-share">
         <p>חשוב לשתף - כי דיאלוג פתוח הוא הדרך היחידה קדימה</p>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=REPLACE_WITH_YOUR_DOMAIN" target="_blank" title="שיתוף בפייסבוק"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/intent/tweet?url=REPLACE_WITH_YOUR_DOMAIN&text=הצד%20השני%20של%20הסיפור%20-%20קפה%20נינה" target="_blank" title="שיתוף בטוויטר"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/?text=כדאי%20לקרוא%20את%20הצד%20השני%20של%20הסיפור%20REPLACE_WITH_YOUR_DOMAIN" target="_blank" title="שיתוף בוואטסאפ"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://t.me/share/url?url=REPLACE_WITH_YOUR_DOMAIN&text=הצד%20השני%20של%20הסיפור%20-%20קפה%20נינה" target="_blank" title="שיתוף בטלגרם"><i class="fab fa-telegram"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://ninah-chi.vercel.app/" target="_blank" title="שיתוף בפייסבוק"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://ninah-chi.vercel.app/&text=הצד%20השני%20של%20הסיפור%20-%20קפה%20נינה" target="_blank" title="שיתוף בטוויטר"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/?text=כדאי%20לקרוא%20את%20הצד%20השני%20של%20הסיפור%20https://ninah-chi.vercel.app/" target="_blank" title="שיתוף בוואטסאפ"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/share/url?url=https://ninah-chi.vercel.app/&text=הצד%20השני%20של%20הסיפור%20-%20קפה%20נינה" target="_blank" title="שיתוף בטלגרם"><i class="fab fa-telegram"></i></a>
       </div>
 
       <div class="quote-section">
@@ -399,9 +400,22 @@
     </footer>
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
   <script>
-    // הסרת Firebase זמנית - ניתן לחבר מאוחר יותר
-    let comments = [];
+    // הגדרות Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyAUzDzgIeggPyz7MlgMj_4cgNDbGiCfaKo",
+      authDomain: "popchat-b2dd4.firebaseapp.com",
+      databaseURL: "https://popchat-b2dd4-default-rtdb.firebaseio.com/",
+      projectId: "popchat-b2dd4",
+      storageBucket: "popchat-b2dd4.appspot.com",
+      messagingSenderId: "544946809123",
+      appId: "1:544946809123:web:1d52efbff657fa118c4496"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
 
     function submitComment(e) {
       e.preventDefault();
@@ -410,40 +424,52 @@
 
       if (!name || !text) return;
 
-      // הוספה זמנית לזיכרון (במקום Firebase)
-      comments.push({ name, text, timestamp: new Date() });
-
-      // ניקוי הטופס
-      document.getElementById("commentName").value = "";
-      document.getElementById("commentText").value = "";
-
-      // עדכון התצוגה
-      displayComments();
-
-      // הודעה למשתמש
-      alert("התגובה נשלחה בהצלחה!");
+      // שליחה לFirebase
+      const commentRef = db.ref("nina-cafe-comments");
+      commentRef.push({
+        name,
+        text,
+        timestamp: firebase.database.ServerValue.TIMESTAMP
+      }).then(() => {
+        // ניקוי הטופס אחרי שליחה מוצלחת
+        document.getElementById("commentName").value = "";
+        document.getElementById("commentText").value = "";
+        alert("התגובה נשלחה בהצלחה!");
+      }).catch((error) => {
+        console.error("שגיאה בשליחת התגובה:", error);
+        alert("שגיאה בשליחת התגובה. נסה שוב.");
+      });
     }
 
-    function displayComments() {
-      const commentsDiv = document.getElementById("comments");
-      commentsDiv.innerHTML = '<h3>דעות שהתקבלו:</h3>';
+    function loadComments() {
+      const commentRef = db.ref("nina-cafe-comments");
+      commentRef.orderByChild("timestamp").on("value", (snapshot) => {
+        const commentsDiv = document.getElementById("comments");
+        commentsDiv.innerHTML = '<h3>דעות שהתקבלו:</h3>';
 
-      if (comments.length === 0) {
-        commentsDiv.innerHTML += '<p style="color: rgba(255,255,255,0.7); font-style: italic;">עדיין אין תגובות. היו הראשונים!</p>';
-        return;
-      }
+        const comments = [];
+        snapshot.forEach((child) => {
+          comments.push(child.val());
+        });
 
-      comments.forEach((comment) => {
-        const commentEl = document.createElement("div");
-        commentEl.className = "comment";
-        commentEl.innerHTML = `<strong>${comment.name}</strong>${comment.text}`;
-        commentsDiv.appendChild(commentEl);
+        if (comments.length === 0) {
+          commentsDiv.innerHTML += '<p style="color: rgba(255,255,255,0.7); font-style: italic;">עדיין אין תגובות. היו הראשונים!</p>';
+          return;
+        }
+
+        // הצגת התגובות (החדשות ראשונות)
+        comments.reverse().forEach((comment) => {
+          const commentEl = document.createElement("div");
+          commentEl.className = "comment";
+          commentEl.innerHTML = `<strong>${comment.name}</strong>${comment.text}`;
+          commentsDiv.appendChild(commentEl);
+        });
       });
     }
 
     // טעינה ראשונית
     window.onload = function() {
-      displayComments();
+      loadComments();
     };
   </script>
 </body>

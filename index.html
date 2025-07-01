@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>קפה נינה - הצד השני של הסיפור</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="כי לכל סיפור יש שני צדדים - דיון מאוזן על האירוع בבית הקפה בנווה צדק">
+  <meta name="keywords" content="קפה נינה, נווה צדק, דיאלוג, דיון מאוזן">
+  <meta name="author" content="הצד השני של הסיפור">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="REPLACE_WITH_YOUR_DOMAIN">
+  <meta property="og:title" content="קפה נינה - הצד השני של הסיפור">
+  <meta property="og:description" content="כי לכל סיפור יש שני צדדים - דיון מאוזן על האירוע בבית הקפה">
+  <meta property="og:image" content="REPLACE_WITH_YOUR_DOMAIN/og-image.jpg">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="הצד השני של הסיפור">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="REPLACE_WITH_YOUR_DOMAIN">
+  <meta name="twitter:title" content="קפה נינה - הצד השני של הסיפור">
+  <meta name="twitter:description" content="כי לכל סיפור יש שני צדדים - דיון מאוזן על האירוע">
+  <meta name="twitter:image" content="REPLACE_WITH_YOUR_DOMAIN/og-image.jpg">
+
+  <!-- WhatsApp -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin: 0;
+      color: white;
+      font-weight: 300;
+    }
+
+    main {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .story-intro {
+      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      border-right: 5px solid #e17055;
+    }
+
+    .story-intro h2 {
+      color: #2d3436;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .story-intro p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #2d3436;
+    }
+
+    .quote-section {
+      background: linear-gradient(135deg, #81ecec 0%, #74b9ff 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      margin: 2rem 0;
+      position: relative;
+      border-right: 5px solid #0984e3;
+    }
+
+    .quote-section::before {
+      content: '"';
+      font-size: 4rem;
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      color: rgba(255, 255, 255, 0.3);
+      font-family: serif;
+    }
+
+    .quote-section p {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 0;
+      color: #2d3436;
+      font-weight: 400;
+    }
+
+    .points-section {
+      background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      margin: 2rem 0;
+      border-right: 5px solid #e84393;
+    }
+
+    .points-section h2 {
+      color: #2d3436;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .points-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .point-card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .point-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .point-card h3 {
+      color: #e84393;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .point-card p {
+      margin: 0;
+      color: #2d3436;
+    }
+
+    .social-share {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+      border-radius: 15px;
+    }
+
+    .social-share p {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-share a {
+      margin: 0 0.8rem;
+      display: inline-block;
+      font-size: 2rem;
+      color: white;
+      transition: all 0.3s ease;
+      padding: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .social-share a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+
+    .comment-section {
+      background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+      border-right: 5px solid #00b894;
+    }
+
+    .comment-section h2 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .comment-form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus, textarea:focus {
+      outline: none;
+      background: white;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    button {
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    #comments {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+
+    .comment {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border-right: 3px solid #00b894;
+    }
+
+    .comment strong {
+      color: #00b894;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 20px;
+      margin-top: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        padding: 1.5rem;
+      }
+
+      .quote-section, .story-intro, .points-section, .comment-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>קפה נינה - הצד השני</h1>
+      <p>כי לכל סיפור יש שני צדדים</p>
+    </header>
+
+    <main>
+      <div class="story-intro">
+        <h2>מה באמת קרה?</h2>
+        <p>בימים האחרונים התפרסם סיפור על אירוע בבית קפה בנווה צדק. הסיפור התפשט ברשת ועורר רגשות עזים. אבל האם שמענו את כל הגרסאות? האם חקרנו לעומק לפני שהוצאנו פסק דין?</p>
+      </div>
+
+      <div class="social-share">
+        <p>חשוב לשתף - כי דיאלוג פתוח הוא הדרך היחידה קדימה</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=REPLACE_WITH_YOUR_DOMAIN" target="_blank" title="שיתוף בפייסבוק"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=REPLACE_WITH_YOUR_DOMAIN&text=הצד%20השני%20של%20הסיפור%20-%20קפה%20נינה" target="_blank" title="שיתוף בטוויטר"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/?text=כדאי%20לקרוא%20את%20הצד%20השני%20של%20הסיפור%20REPLACE_WITH_YOUR_DOMAIN" target="_blank" title="שיתוף בוואטסאפ"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://t.me/share/url?url=REPLACE_WITH_YOUR_DOMAIN&text=הצד%20השני%20של%20הסיפור%20-%20קפה%20נינה" target="_blank" title="שיתוף בטלגרם"><i class="fab fa-telegram"></i></a>
+      </div>
+
+      <div class="quote-section">
+        <p>אני לא קורא מחשבות. לא זיהיתי שהיא חטופה לשעבר - וגם היא לא אמרה מההתחלה. יש לי כללים במקום, וכל מי שנכנס מתבקש לכבד אותם. לא נעים לי שהיא נפגעה, זה באמת לא היה המטרה.</p>
+        <small>- אייל, בעל בית הקפה</small>
+      </div>
+
+      <div class="points-section">
+        <h2>למה כדאי לחשוב פעמיים לפני החרמה?</h2>
+        <div class="points-grid">
+          <div class="point-card">
+            <h3><i class="fas fa-heart-broken"></i> שיימינג ברשת הוא נשק</h3>
+            <p>הרס מוניטין באינטרנט יכול להרוס חיים ופרנסה בתוך שעות, לפעמים בלי קשר לאמת</p>
+          </div>
+
+          <div class="point-card">
+            <h3><i class="fas fa-store"></i> עסק קטן = אנשים אמיתיים</h3>
+            <p>מאחורי כל עסק קטן עומדים אנשים עם משפחות, חלומות ודאגות. זה לא תאגיד ענק</p>
+          </div>
+
+          <div class="point-card">
+            <h3><i class="fas fa-balance-scale"></i> צדק אמיתי דורש חקירה</h3>
+            <p>לפני שמרימים את המזלגות, כדאי לשמוע את כל הצדדים ולהבין את ההקשר המלא</p>
+          </div>
+
+          <div class="point-card">
+            <h3><i class="fas fa-comments"></i> דיאלוג לפני דראמה</h3>
+            <p>הרבה פעמים אפשר לפתור אי הבנות בשיחה ישירה, במקום להסלים לרשתות</p>
+          </div>
+
+          <div class="point-card">
+            <h3><i class="fas fa-puzzle-piece"></i> ההקשר הרחב חשוב</h3>
+            <p>מצב חירום לאומי, מתח וטראומה משפיעים על כולנו - גם על בעלי עסקים</p>
+          </div>
+
+          <div class="point-card">
+            <h3><i class="fas fa-handshake"></i> אמפתיה לכל הכיוונים</h3>
+            <p>אפשר להבין ולהזדהות עם כאב מבלי להרוס אנשים אחרים בתהליך</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment-section">
+        <h2><i class="fas fa-comments"></i> בואו נדבר</h2>
+        <div class="comment-form">
+          <form onsubmit="submitComment(event)">
+            <input type="text" id="commentName" placeholder="השם שלך (יופיע בפרסום)" required>
+            <textarea id="commentText" placeholder="מה דעתך? בואו נשמור על כבוד הדדי בדיון..." rows="4" required></textarea>
+            <button type="submit"><i class="fas fa-paper-plane"></i> שלח תגובה</button>
+          </form>
+        </div>
+
+        <div id="comments">
+          <h3>דעות שהתקבלו:</h3>
+          <p style="color: rgba(255,255,255,0.7); font-style: italic;">התגובות ייטענו כאן...</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p><i class="fas fa-heart"></i> נכתב מתוך אמונה שדיאלוג הוא הדרך היחידה קדימה</p>
+      <p>&copy; 2025 | כי לכל סיפור יש שני צדדים</p>
+    </footer>
+  </div>
+
+  <script>
+    // הסרת Firebase זמנית - ניתן לחבר מאוחר יותר
+    let comments = [];
+
+    function submitComment(e) {
+      e.preventDefault();
+      const name = document.getElementById("commentName").value.trim();
+      const text = document.getElementById("commentText").value.trim();
+
+      if (!name || !text) return;
+
+      // הוספה זמנית לזיכרון (במקום Firebase)
+      comments.push({ name, text, timestamp: new Date() });
+
+      // ניקוי הטופס
+      document.getElementById("commentName").value = "";
+      document.getElementById("commentText").value = "";
+
+      // עדכון התצוגה
+      displayComments();
+
+      // הודעה למשתמש
+      alert("התגובה נשלחה בהצלחה!");
+    }
+
+    function displayComments() {
+      const commentsDiv = document.getElementById("comments");
+      commentsDiv.innerHTML = '<h3>דעות שהתקבלו:</h3>';
+
+      if (comments.length === 0) {
+        commentsDiv.innerHTML += '<p style="color: rgba(255,255,255,0.7); font-style: italic;">עדיין אין תגובות. היו הראשונים!</p>';
+        return;
+      }
+
+      comments.forEach((comment) => {
+        const commentEl = document.createElement("div");
+        commentEl.className = "comment";
+        commentEl.innerHTML = `<strong>${comment.name}</strong>${comment.text}`;
+        commentsDiv.appendChild(commentEl);
+      });
+    }
+
+    // טעינה ראשונית
+    window.onload = function() {
+      displayComments();
+    };
+  </script>
+</body>
+</html>
